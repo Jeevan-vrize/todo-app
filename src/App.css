@@ -1,0 +1,153 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e8f0fe;
+  background: url("C:\Users\jeevan\todo-app\public\Deadpool-Wolverine-07072024.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  background: #f7f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  transition: height 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80vh; /* Starts small */
+}
+
+.app:hover {
+  transform: translateY(-10px) rotateX(7deg) rotateY(-7deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.app-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.add-todo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+  z-index: 10;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+.add-todo input {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.add-todo button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-todo button:hover {
+  background-color: #0056b3;
+}
+
+.todo-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Allow items to align at the top */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* Ensures long words break and wrap within the container */
+  max-width: 100%; /* Ensures the content does not overflow horizontally */
+  white-space: pre-wrap; /* Allows the text to wrap to a new line */
+}
+
+.todo.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-text {
+  cursor: pointer;
+  flex-grow: 1;
+  margin-right: 10px;
+  overflow-wrap: break-word; /* Ensures long words break and wrap within the container */
+  white-space: pre-wrap; /* Allows the text to wrap to a new line */
+  word-break: break-word; /* Breaks the word if it overflows */
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.complete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.complete-button.done {
+  color: #28a745;
+}
+
+.complete-button.not-done {
+  color: #e74c3c;
+}
+
+.edit-button, .delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.edit-button:hover {
+  color: #007bff;
+}
+
+.delete-button {
+  color: #e74c3c;
+}
+
+.delete-button:hover {
+  color: #c0392b;
+}
